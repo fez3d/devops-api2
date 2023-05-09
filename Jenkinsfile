@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
 
   stages {
     stage('Build') {
@@ -16,6 +16,9 @@ pipeline {
       }
     }
     stage('Deploy') {
+      script {
+        app = docker.build('devapitest', "./Dockerfile")
+      }
       steps {
         echo 'Deploying....'
       }
