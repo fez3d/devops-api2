@@ -16,10 +16,10 @@ pipeline {
       }
     }
     stage('Deploy') {
-      script {
-        app = docker.build('devapitest', "./Dockerfile")
-      }
       steps {
+        script {
+          app = docker.build('devapitest', "./Dockerfile")
+        }
         echo 'Deploying....'
       }
     }
