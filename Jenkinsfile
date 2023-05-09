@@ -19,7 +19,7 @@ pipeline {
       steps {
         echo 'Deploying....'
         script {
-          app = docker.build("sicei-${BRANCH_NAME}p:1.0.0-${BUILD_NUMBER}")
+          app = docker.build("sicei-master:1.0.0-${BUILD_NUMBER}")
         }
 
         sh 'sudo docker stop $(sudo docker ps -a -q)'
