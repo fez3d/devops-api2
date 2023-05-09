@@ -18,7 +18,7 @@ pipeline {
     stage('Deploy') {
       steps {
         script {
-          app = docker.build('devapitest', "./Dockerfile")
+          app = docker.build('devapitest', "Dockerfile")
         }
         echo 'Deploying....'
       }
