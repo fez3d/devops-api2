@@ -23,8 +23,7 @@ pipeline {
         }
 
         sh 'sudo docker stop $(sudo docker ps -a -q)'
-        sh 'sudo docker run - sicei-${BRANCH_NAME}p:1.0.0-${BUILD_NUMBER}'
-
+        sh 'sudo docker run - sicei-master:1.0.0-${BUILD_NUMBER}'
       }
     }
   }
