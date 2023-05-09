@@ -12,7 +12,6 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing..'
-        sh 'rvm use 2.7.0'
         sh 'rspec'
       }
     }
