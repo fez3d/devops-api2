@@ -23,7 +23,7 @@ pipeline {
         }
 
         sh 'sudo docker stop $(sudo docker ps -a -q)'
-        sh 'sudo docker run -d sicei-master:1.0.0-${BUILD_NUMBER}'
+        sh 'sudo docker run -p 3000:3000 --network="host" -d sicei-master:1.0.0-${BUILD_NUMBER}'
       }
     }
   }
